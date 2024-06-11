@@ -50,7 +50,41 @@ namespace VarPlugApi.Controllers
             return faculty;
         }
 
-        // PUT: api/Faculties/5
+        // GET: api/Faculties/5
+        [HttpGet("byname/{name}")]
+        public async Task<ActionResult<IEnumerable<Faculty>>> GetFacultyByName(string name)
+        {
+            
+
+            if (_context.Faculty == null)
+            {
+                return NotFound();
+            }
+            var University = new University();
+
+            var faculty = _context.Faculty
+            .Where(d => d.Name.Contains(name))
+             .Select(faculty => new dbaUniversity
+             {
+                 FacultyId = faculty.Id,
+                 FacultyName = faculty.Name,
+                 UniversityName = _context.universities
+                     .Where(u => u.UNI_Id == faculty.UniversityId)
+                     .Select(u => u.UNI_Name)
+                     .FirstOrDefault()
+             })
+             .ToList();
+
+            if (faculty == null)
+            {
+                return NotFound();
+            }
+            return Ok(faculty);
+
+            //return  Ok(await _context.Faculty.Where(d=>d.Name.Contains(name)).ToListAsync());
+        }
+
+        // PUT: api/Faculties/5,
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutFaculty(int id, Faculty faculty)

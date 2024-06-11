@@ -12,5 +12,10 @@ namespace VarPlugApi.Model
         [ForeignKey("University")]
         public int UniversityId { get; set; }
         public University university { get; set; }
+
+        public ICollection<Career> Careers { get; set; }
+
+        public ICollection<CareerFaculty> careerFaculties { get; set; }
+
     }
 }

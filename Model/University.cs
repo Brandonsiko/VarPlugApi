@@ -19,5 +19,9 @@ namespace VarPlugApi.Model
         [ForeignKey("Province")]
         public int ProvinceId { get; set; }
         public Province province { get; set; }
+
+  
+        public ICollection<CareerUniverities> careerUniverities { get; set; }
+
     }
 }
