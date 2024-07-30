@@ -1,4 +1,4 @@
-Varsity Plug
+# Varsity Plug
 Varsity Plug is an application designed to assist prospective students in South Africa by providing valuable information and resources related to university education. The app offers a variety of features to help users make informed decisions about their academic and career paths.
 
 Features
