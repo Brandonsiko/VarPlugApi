@@ -16,7 +16,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/varsity-plug.git
+git clone https://github.com/Brandonsiko/VarPlugApi
 cd varsity-plug
 Install backend dependencies:
 
