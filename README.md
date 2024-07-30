@@ -21,7 +21,7 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/your-username/varsity-plug.git
+   git clone https://github.com/Brandonsiko/VarPlugApi
    cd varsity-plug
    ```
 
